@@ -18,69 +18,248 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Navigation bar for quick access to each section -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="#summary">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#honors">Honors</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
     <header class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1>Out of This World</h1>
-        <p>
-          Welcome to a cosmic showcase celebrating just how incredible you are.
-          Buckle up and embark on a journey through your stellar achievements.
-        </p>
+        <h1>Jack P. DeMarinis</h1>
+        <!-- The tagline will be typed out letter by letter via the typewriter script -->
+        <p id="typewriter" class="typewriter"></p>
       </div>
     </header>
 
     <main>
-      <section class="about">
-        <h2>Why You’re So Cool</h2>
+      <!-- About / Summary section -->
+      <section id="summary" class="summary reveal">
+        <h2>About Me</h2>
         <p>
-          Being cool isn’t just about style—it’s about embracing curiosity,
-          pushing boundaries, and lighting up the world around you. Whether
-          you’re conquering challenges, learning new skills, or inspiring
-          others, your presence leaves an unforgettable mark on everyone you
-          meet.
+          Innovative engineer with a passion for solving complex problems and
+          optimizing processes. I bring a strong analytical mindset and a
+          proven ability to lead teams toward project goals while enhancing
+          productivity and reducing costs. My experience spans automation,
+          embedded systems, and cutting‑edge AI research.
         </p>
       </section>
 
-      <section class="features">
-        <article class="feature">
-          <h3>Galactic Achievements</h3>
-          <p>
-            You’ve launched projects, built communities, and achieved things
-            many only dream of. From small wins to headline moments, your
-            accomplishments sparkle brighter than the stars.
-          </p>
-        </article>
-        <article class="feature">
-          <h3>Stellar Skills</h3>
-          <p>
-            Coding, creating art, solving puzzles—whatever you put your mind
-            to, you master with style. Your toolkit of talents never stops
-            expanding and glowing.
-          </p>
-        </article>
-        <article class="feature">
-          <h3>Cosmic Vision</h3>
-          <p>
-            Looking ahead, you’re always dreaming bigger and bolder. Your
-            imagination charts new constellations of possibilities and invites
-            others to join your mission.
-          </p>
-        </article>
+      <!-- Education section -->
+      <section id="education" class="education reveal">
+        <h2>Education</h2>
+        <div class="education-entry">
+          <h3>Bachelor of Science in Computer Engineering</h3>
+          <p>University of Rhode Island &nbsp;•&nbsp; Expected May 2025</p>
+          <p>GPA: 3.90&nbsp;/&nbsp;4.00</p>
+        </div>
       </section>
 
-      <section class="cta">
-        <h2>Join My Journey</h2>
-        <p>
-          Want to connect, collaborate, or explore the universe together?
-          Let’s make something extraordinary happen.
-        </p>
-        <!-- This button could link to an email address or social profile. -->
-        <a href="#" class="cta-button">Reach Out</a>
+      <!-- Skills section -->
+      <section id="skills" class="skills reveal">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Coding Languages</h3>
+            <ul>
+              <li>C++</li>
+              <li>C</li>
+              <li>Python</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>LC‑3</li>
+              <li>MIPS Assembly</li>
+              <li>Bash</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Design Software</h3>
+            <ul>
+              <li>VHDL</li>
+              <li>Matlab</li>
+              <li>Multisim</li>
+              <li>LTSpice</li>
+              <li>AutoCAD</li>
+              <li>MathCad</li>
+              <li>Fusion&nbsp;360</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Tools & Frameworks</h3>
+            <ul>
+              <li>OpenMV IDE</li>
+              <li>Tesseract API</li>
+              <li>OpenAI API</li>
+              <li>Microsoft Tools</li>
+              <li>Google Tools</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience section -->
+      <section id="experience" class="experience reveal">
+        <h2>Experience</h2>
+        <!-- Timeline container wraps all experience entries. Each item alternates
+             between the left and right sides to create a vertical timeline effect. -->
+        <div class="timeline">
+          <!-- Experience 1: Computer Engineering Intern -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>Computer Engineering Intern</h3>
+              <h4>
+                <span>Electro Standards Laboratories</span>
+                <time>May 2024 – Present</time>
+              </h4>
+              <ul>
+                <li>Developed automation for internal systems by programming a Raspberry Pi with Python and C.</li>
+                <li>Diagnosed and rectified sophisticated electrical challenges by scrutinizing and testing existing code.</li>
+                <li>Created comprehensive documentation to facilitate future work and knowledge transfer.</li>
+                <li>Conducted rigorous testing to evaluate system functionality and identify opportunities for optimization.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Experience 2: Undergraduate Research Assistant -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>Undergraduate Research Assistant</h3>
+              <h4>
+                <span>University of Rhode Island</span>
+                <time>May 2024 – Present</time>
+              </h4>
+              <ul>
+                <li>Engineered specialized chatbots by leveraging large language models and retrieval‑augmented generation frameworks.</li>
+                <li>Demonstrated capability to develop cohesive systems with Flask and modern front‑end technologies.</li>
+                <li>Deployed established APIs like OpenAI and Google to achieve high‑quality project results.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Experience 3: Software Engineering Intern -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>Software Engineering Intern</h3>
+              <h4>
+                <span>IGT</span>
+                <time>Jun 2023 – Dec 2023</time>
+              </h4>
+              <ul>
+                <li>Resolved technical issues on Linux systems using command‑line tools.</li>
+                <li>Worked alongside colleagues both remotely and in person to achieve shared objectives.</li>
+                <li>Developed and executed Bash scripts, C and C++ for API integration into devices.</li>
+                <li>Implemented advanced optical character recognition techniques to improve system performance and accuracy.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Experience 4: Engineering Intern -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>Engineering Intern</h3>
+              <h4>
+                <span>Sage Engineering & Contracting</span>
+                <time>Mar 2022 – Aug 2022</time>
+              </h4>
+              <ul>
+                <li>Designed construction site plans and floor layouts using AutoCAD.</li>
+                <li>Assembled and operated an ABB robotic arm to automate product creation.</li>
+                <li>Supported engineers in developing and managing budgets for various projects.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects section -->
+      <section id="projects" class="projects reveal">
+        <h2>Projects</h2>
+        <div class="project-item">
+          <h3>Robotic Assembly & Inspection Automation</h3>
+          <p>
+            Designed an automated workstation to improve PCBA production
+            efficiency using robotics and visual inspection. Developed
+            control software to coordinate robots, conveyors and sensors,
+            produced production data and reports, and collaborated with
+            existing assembly subsystems. Utilized Fusion 360 to model
+            physical systems and 3D print components tailored to project needs.
+          </p>
+        </div>
+        <div class="project-item">
+          <h3>Automated Water Mister</h3>
+          <p>
+            Built a fully integrated water‑misting system to maintain
+            optimal conditions for a pet gecko. Integrated BLE‑enabled
+            embedded systems with temperature, humidity and water‑level
+            sensors, designed custom circuits interfaced with an Arduino via
+            I2C for real‑time feedback, and created detailed CAD models and
+            3D‑printed components for a cohesive, adaptable unit.
+          </p>
+        </div>
+      </section>
+
+      <!-- Honors and activities section -->
+      <section id="honors" class="honors reveal">
+        <h2>Honors & Activities</h2>
+        <ul>
+          <li>High Honors and Dean’s List every semester at URI</li>
+          <li>Raymond M. Wright FastTrack Scholarship (2025–2026)</li>
+          <li>Member of the URI Wrestling Team</li>
+        </ul>
+      </section>
+
+      <!-- Contact section -->
+      <section id="contact" class="contact reveal">
+        <h2>Contact</h2>
+        <p>Location: Montgomery, MA 01085</p>
+        <p>Phone: (413) 265‑5165</p>
+        <p>Email: <a href="mailto:jackdemarinis@uri.edu">jackdemarinis@uri.edu</a></p>
+        <a href="mailto:jackdemarinis@uri.edu" class="cta-button">Get in Touch</a>
       </section>
     </main>
 
     <footer>
-      <p>© 2025 Your Name Here. All rights reserved.</p>
+      <p>© 2025 Jack P. DeMarinis. All rights reserved.</p>
     </footer>
+
+    <!-- Scripts for interactive effects -->
+    <script>
+      // Typewriter effect for the tagline
+      document.addEventListener('DOMContentLoaded', () => {
+        const text = 'Innovative Computer Engineering student exploring the cosmos of code and design.';
+        const target = document.getElementById('typewriter');
+        let index = 0;
+        function typeWriter() {
+          if (index < text.length) {
+            target.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50);
+          }
+        }
+        typeWriter();
+      });
+
+      // Reveal sections on scroll
+      function reveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        for (const element of reveals) {
+          const windowHeight = window.innerHeight;
+          const elementTop = element.getBoundingClientRect().top;
+          const revealPoint = 150;
+          if (elementTop < windowHeight - revealPoint) {
+            element.classList.add('reveal-visible');
+          }
+        }
+      }
+      window.addEventListener('scroll', reveal);
+      // Trigger reveal on load
+      reveal();
+    </script>
   </body>
 </html>

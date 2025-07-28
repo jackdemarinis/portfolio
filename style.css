@@ -19,23 +19,90 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Typewriter effect for the hero tagline */
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid #f6511d;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+  animation: blink-caret 0.8s step-end infinite;
+  font-size: 1.25rem;
+  color: #ddddff;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #f6511d;
+  }
+}
+
+/* Reveal animation used for section fade‑in */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Navigation bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(10, 10, 35, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.navbar a {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f6511d;
 }
 
 /* Hero section */
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('space_bg1.png);
+  background-image: url('space_bg1.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  /* Add padding to account for fixed navbar */
+  padding-top: 5rem;
 }
 
 .hero-overlay {
@@ -52,6 +119,17 @@ a {
   position: relative;
   z-index: 2;
   padding: 0 1rem;
+  /* Fade in the hero content with a slight upward motion */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero h1 {
@@ -137,9 +215,10 @@ section p {
 /* Call to action section */
 .cta {
   position: relative;
-  background-image: url('space_bg2.png);
+  background-image: url('space_bg2.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: #ffffff;
   text-align: center;
 }
@@ -195,4 +274,239 @@ footer {
   background-color: #090920;
   color: #666680;
   font-size: 0.9rem;
+}
+
+/* Summary, education, experience, projects, honors and contact cards */
+.summary p,
+.education-entry,
+.experience-item,
+.project-item,
+.honors ul,
+.contact p {
+  background: #17173a;
+  padding: 1.5rem 2rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  max-width: 900px;
+}
+
+/* Specific styling for lists */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    flex-direction: row;
+  }
+}
+
+.skill-category {
+  flex: 1;
+  background: #17173a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.skill-category h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category li {
+  margin-bottom: 0.3rem;
+  color: #bbbbcc;
+}
+
+.skill-category li::before {
+  content: '•';
+  color: #f6511d;
+  margin-right: 0.4rem;
+}
+
+.experience-item h3,
+.project-item h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.experience-item h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a0a0c0;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item p,
+.project-item p {
+  color: #bbbbcc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.projects .project-item {
+  margin-bottom: 2rem;
+}
+
+.honors ul {
+  list-style: none;
+  max-width: 900px;
+  margin: 1rem auto;
+}
+
+.honors li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #bbbbcc;
+}
+
+.honors li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f6511d;
+}
+
+.contact p {
+  color: #ccccdd;
+}
+
+.contact a.cta-button {
+  margin-top: 1rem;
+}
+
+/* Timeline styles for the experience section */
+.experience .timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem 0;
+}
+
+.experience .timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #f6511d;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.experience .timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  min-height: 100px;
+}
+
+.experience .timeline-item.left {
+  left: 0;
+}
+
+.experience .timeline-item.right {
+  left: 50%;
+}
+
+.experience .timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: -10px;
+  background-color: #f6511d;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(246, 81, 29, 0.5);
+  z-index: 1;
+}
+
+.experience .timeline-item.right::after {
+  left: -10px;
+  right: auto;
+}
+
+.experience .timeline-content {
+  background-color: #17173a;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  color: #bbbbcc;
+}
+
+.experience .timeline-content h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+}
+
+.experience .timeline-content h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a0a0c0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.experience .timeline-content ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.experience .timeline-content li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.experience .timeline-content li::before {
+  content: '•';
+  position: absolute;
+  left: -1rem;
+  color: #f6511d;
+}
+
+/* Responsive timeline: full width entries on small screens */
+@media (max-width: 768px) {
+  .experience .timeline::after {
+    left: 20px;
+  }
+
+  .experience .timeline-item {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .experience .timeline-item::after {
+    left: 10px;
+    right: auto;
+  }
+
+  .experience .timeline-item.right {
+    left: 0;
+  }
 }
