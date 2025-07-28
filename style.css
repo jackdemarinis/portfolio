@@ -1,0 +1,198 @@
+/*
+ * Styles for the space‑themed single page. The dark palette, glowing
+ * highlights and crisp typography combine to deliver a futuristic
+ * experience. The layout adapts for mobile and desktop with flexbox.
+ */
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #f5f5f5;
+  background-color: #0a0a23;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('images/space_bg1.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #ddddff;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Section styles */
+section {
+  padding: 4rem 2rem;
+}
+
+section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+section p {
+  font-size: 1.1rem;
+  color: #ccccdd;
+}
+
+/* About section */
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Features section */
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .features {
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.feature {
+  background: #17173a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  flex: 1;
+}
+
+.feature h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.feature p {
+  color: #bbbbcc;
+  font-size: 1rem;
+}
+
+/* Call to action section */
+.cta {
+  position: relative;
+  background-image: url('images/space_bg2.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.cta h2,
+.cta p,
+.cta .cta-button {
+  position: relative;
+  z-index: 1;
+}
+
+.cta p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #ddddee;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  background-color: #f6511d;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  box-shadow: 0 0 10px rgba(246, 81, 29, 0.5);
+}
+
+.cta-button:hover {
+  background-color: #d94014;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #090920;
+  color: #666680;
+  font-size: 0.9rem;
+}
