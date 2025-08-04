@@ -240,15 +240,15 @@
           if (index < text.length) {
             target.textContent += text.charAt(index);
             index++;
-            setTimeout(typeWriter, 75); // Slightly slower for better readability
+            setTimeout(typeWriter, 75);
           } else {
-            // Animation completed - keep the cursor blinking
-            target.style.borderRight = '0.15em solid #f6511d';
+            // Once typing is done, remove the class that has the blinking cursor
+            target.classList.add('typing-done');
           }
         }
         
-        // Start the animation
-        typeWriter();
+        // Start typing after a brief delay
+        setTimeout(typeWriter, 1000);
       });
 
       // Reveal sections on scroll

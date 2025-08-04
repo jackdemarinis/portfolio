@@ -21,32 +21,41 @@ body {
 
 /* Typewriter effect for the hero tagline */
 .typewriter {
-  border-right: 0.15em solid transparent;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.05em;
-  animation: blink-caret 0.8s step-end infinite;
-  font-size: 1.25rem;
   color: #ddddff;
-  max-width: 100%;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  /* For centering and wrapping */
   display: inline-block;
+  text-align: center;
+  max-width: 600px;
+  white-space: normal; /* Allow text to wrap */
+  position: relative; /* For pseudo-element positioning */
+}
+
+/* The cursor is now a pseudo-element, so it flows with the text */
+.typewriter::after {
+  content: '';
+  display: inline-block;
+  width: 0.1em;
+  height: 1.1em; /* Should be about the height of the text */
+  background: #f6511d;
+  margin-left: 0.15em;
+  vertical-align: -0.1em; /* Align with the text */
+  animation: blink-caret 0.8s step-end infinite;
 }
 
 @keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
+  from, to {
+    background-color: transparent;
   }
   50% {
-    border-color: #f6511d;
+    background-color: #f6511d;
   }
 }
 
-/* Reveal animation used for section fade‑in */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+/* Hide the cursor when typing is finished */
+.typewriter.typing-done::after {
+  content: none;
 }
 
 .reveal-visible {
@@ -76,6 +85,7 @@ a {
   justify-content: center;
   gap: 2rem;
   padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .navbar a {
@@ -83,10 +93,22 @@ a {
   font-weight: 600;
   color: #ffffff;
   transition: color 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .navbar a:hover {
   color: #f6511d;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .navbar a {
+    font-size: 0.8rem;
+  }
 }
 
 /* Hero section */
@@ -120,6 +142,7 @@ a {
   position: relative;
   z-index: 2;
   padding: 0 1rem;
+  text-align: center;
   /* Fade in the hero content with a slight upward motion */
   opacity: 0;
   transform: translateY(30px);
@@ -139,6 +162,18 @@ a {
   margin-bottom: 1rem;
   color: #ffffff;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .typewriter {
+    font-size: 1rem;
+    max-width: 95%;
+    line-height: 1.4;
+  }
 }
 
 .hero p {
@@ -166,6 +201,20 @@ section h2 {
 section p {
   font-size: 1.1rem;
   color: #ccccdd;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 1rem;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+  }
+  
+  section p {
+    font-size: 1rem;
+  }
 }
 
 /* About section */
