@@ -21,14 +21,15 @@ body {
 
 /* Typewriter effect for the hero tagline */
 .typewriter {
-  overflow: hidden;
-  border-right: 0.15em solid #f6511d;
+  border-right: 0.15em solid transparent;
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.05em;
   animation: blink-caret 0.8s step-end infinite;
   font-size: 1.25rem;
   color: #ddddff;
+  max-width: 100%;
+  display: inline-block;
 }
 
 @keyframes blink-caret {

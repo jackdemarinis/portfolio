@@ -235,13 +235,19 @@
         const text = 'Innovative Computer Engineering student exploring the cosmos of code and design.';
         const target = document.getElementById('typewriter');
         let index = 0;
+        
         function typeWriter() {
           if (index < text.length) {
             target.textContent += text.charAt(index);
             index++;
-            setTimeout(typeWriter, 50);
+            setTimeout(typeWriter, 75); // Slightly slower for better readability
+          } else {
+            // Animation completed - keep the cursor blinking
+            target.style.borderRight = '0.15em solid #f6511d';
           }
         }
+        
+        // Start the animation
         typeWriter();
       });
 
