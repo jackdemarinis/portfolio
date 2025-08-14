@@ -149,6 +149,24 @@ a {
   animation: fadeInUp 2s ease-out forwards;
 }
 
+/* Circular profile photo in the hero */
+.hero .profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f6511d;
+  box-shadow: 0 0 20px rgba(246, 81, 29, 0.4);
+  margin: 0 auto 1rem;
+}
+
+.hero .profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 @keyframes fadeInUp {
   to {
     opacity: 1;
