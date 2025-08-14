@@ -35,7 +35,7 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="profile-photo">
-          <img src="Headshot.jpg" alt="Headshot of Jack P. DeMarinis" width="160" height="160" loading="eager" decoding="async" />
+          <img src="Jack Headshot.png" alt="Headshot of Jack P. DeMarinis" width="160" height="160" loading="eager" decoding="async" />
         </div>
         <h1>Jack P. DeMarinis</h1>
         <!-- The tagline will be typed out letter by letter via the typewriter script -->
@@ -209,13 +209,13 @@
       <section id="projects" class="projects reveal">
         <h2>Projects</h2>
         <div class="project-item">
-          <h3>Agentic RAG Chatbot — Lead Developer (2024)</h3>
+          <h3>Agentic RAG Chatbot</h3>
           <p>
             Built a multi‑agent Retrieval‑Augmented Generation (RAG) system integrating LLMs with specialized reasoning chains. Implemented embedding pipelines and vector search (FAISS) for context‑grounded responses, reducing hallucinations by ~30%. Designed modular agent architecture using Hugging Face Transformers for orchestration and reasoning workflows. Packaged as a Dockerized Flask API with CI/CD (GitHub Actions) and AWS deployment; developed custom prompt engineering strategies, routing logic, and tool‑calling capabilities.
           </p>
         </div>
         <div class="project-item">
-          <h3>Meeting Muncher — AI Meeting Assistant — Co‑Developer (2025)</h3>
+          <h3>AI Meeting Assistant</h3>
           <p>
             Engineered an end‑to‑end meeting intelligence platform with audio capture, transcription, summarization, and actionable insights. Leveraged OpenAI Whisper for transcription and GPT‑4 for multi‑view summarization (action items, decisions, agendas). Created multi‑agent processing pipelines with specialized prompt modules for meeting analytics and Jira integration. Built group‑based knowledge organization with persistent context storage for personalized summaries and automated distribution of structured notes.
           </p>
@@ -300,6 +300,25 @@
       window.addEventListener('scroll', reveal);
       // Trigger reveal on load
       reveal();
+
+      // Interactive mouse-follow glow and tilt on the profile photo
+      const profile = document.querySelector('.profile-photo');
+      if (profile) {
+        profile.addEventListener('mousemove', (event) => {
+          const rect = profile.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          profile.style.setProperty('--mx', x + 'px');
+          profile.style.setProperty('--my', y + 'px');
+
+          const tiltX = ((y / rect.height) - 0.5) * -6; // up/down tilt
+          const tiltY = ((x / rect.width) - 0.5) * 6;   // left/right tilt
+          profile.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.03)`;
+        });
+        profile.addEventListener('mouseleave', () => {
+          profile.style.transform = '';
+        });
+      }
     </script>
   </body>
 </html>
