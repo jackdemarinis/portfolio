@@ -4,12 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jack DeMarinis</title>
-    <!--
-      This single–page site is designed to celebrate the user’s coolness with
-      a dramatic space theme. The styling lives in `style.css` and uses
-      Google fonts for a futuristic look. Replace the placeholder text below
-      with your own story or accomplishments to truly make it your own.
-    -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Orbitron:wght@400;700&display=swap"
@@ -18,7 +12,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navigation bar for quick access to each section -->
     <nav class="navbar">
       <ul>
         <li><a href="#summary">About</a></li>
@@ -35,40 +28,44 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="profile-photo">
-          <img src="Jack Headshot.png" alt="Headshot of Jack P. DeMarinis" width="160" height="160" loading="eager" decoding="async" />
+          <img
+            src="Jack Headshot.png"
+            alt="Headshot of Jack P. DeMarinis"
+            width="160"
+            height="160"
+            loading="eager"
+            decoding="async"
+          />
         </div>
-        <h1>Jack P. DeMarinis</h1>
-        <!-- The tagline will be typed out letter by letter via the typewriter script -->
+        <h1>Jack P. DeMarinis</h1>
         <p id="typewriter" class="typewriter"></p>
       </div>
     </header>
 
     <main>
-      <!-- About / Summary section -->
       <section id="summary" class="summary reveal">
         <h2>About Me</h2>
         <p>
-          Versatile computer engineer with a multidisciplinary background spanning software, hardware, and AI systems. Experienced in developing solutions that bridge embedded systems, robotics, and cutting-edge AI applications, including large language models and retrieval-augmented generation. Equally comfortable working independently or in cross-functional teams, with strong communication skills, adaptability, and a track record of delivering results under tight deadlines. Known for combining technical expertise with a collaborative, solutions-focused mindset to drive projects from concept to completion.
+          Versatile computer engineer with a multidisciplinary background spanning software, hardware, and AI systems. Experienced in developing solutions that bridge embedded systems, robotics, and modern AI applications, including large language models and retrieval-augmented generation. Comfortable working independently or in cross-functional teams, with a strong record of delivering practical systems under real-world constraints.
         </p>
       </section>
 
-      <!-- Education section -->
       <section id="education" class="education reveal">
         <h2>Education</h2>
         <div class="education-entry">
           <h3>Master of Science: Electrical Engineering</h3>
-          <p>University of Rhode Island &nbsp;•&nbsp; Expected May 2026</p>
+          <p>University of Rhode Island - Expected May 2026</p>
           <p>Accelerated B.S./M.S. (ABM) Program</p>
-          <p>GPA: 3.90&nbsp;/&nbsp;4.00</p>
+          <p>GPA: 3.90 / 4.00</p>
         </div>
         <div class="education-entry">
           <h3>Bachelor of Science: Computer Engineering</h3>
-          <p>University of Rhode Island &nbsp;•&nbsp; Graduated May 2025</p>
-          <p>GPA: 3.90&nbsp;/&nbsp;4.00</p>
+          <p>University of Rhode Island - Graduated May 2025</p>
+          <p>Minor: Mathematics</p>
+          <p>GPA: 3.90 / 4.00</p>
         </div>
       </section>
 
-      <!-- Skills section -->
       <section id="skills" class="skills reveal">
         <h2>Technical Skills</h2>
         <div class="skills-grid">
@@ -82,15 +79,15 @@
               <li>HTML/CSS</li>
               <li>JavaScript</li>
               <li>MIPS Assembly</li>
-              <li>LC‑3</li>
+              <li>LC-3</li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>ML/AI</h3>
+            <h3>ML / AI</h3>
             <ul>
               <li>PyTorch</li>
               <li>Hugging Face Transformers &amp; Datasets</li>
-              <li>LoRA/PEFT fine‑tuning</li>
+              <li>LoRA / PEFT fine-tuning</li>
               <li>OpenAI API</li>
               <li>Embeddings &amp; vector search (FAISS)</li>
               <li>RAG pipelines</li>
@@ -98,194 +95,176 @@
             </ul>
           </div>
           <div class="skill-category">
-            <h3>Deployment</h3>
+            <h3>Systems &amp; Deployment</h3>
             <ul>
+              <li>Linux</li>
               <li>Docker</li>
               <li>Flask</li>
               <li>REST APIs</li>
               <li>GitHub Actions CI/CD</li>
-              <li>Linux systems</li>
               <li>Cloud AI services (GCP)</li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>Data</h3>
+            <h3>Tools &amp; Design</h3>
             <ul>
-              <li>Pandas</li>
-              <li>NumPy</li>
-              <li>OCR (Tesseract)</li>
-              <li>SQL basics</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Design &amp; Tools</h3>
-            <ul>
+              <li>Unity</li>
               <li>Fusion 360</li>
               <li>AutoCAD</li>
-              <li>Matlab</li>
+              <li>MATLAB</li>
               <li>LTSpice</li>
               <li>Multisim</li>
-              <li>MathCad</li>
+              <li>Mathcad</li>
               <li>VHDL</li>
               <li>OpenMV IDE</li>
-              <li>Microsoft &amp; Google productivity tools</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- Experience section -->
       <section id="experience" class="experience reveal">
         <h2>Experience</h2>
-        <!-- Timeline container wraps all experience entries. Each item alternates
-             between the left and right sides to create a vertical timeline effect. -->
         <div class="timeline">
-          <!-- Experience 1: Undergraduate Research Assistant -->
           <div class="timeline-item left">
             <div class="timeline-content">
-              <h3>Undergraduate Research Assistant</h3>
+              <h3>Graduate Research Assistant</h3>
               <h4>
-                <span>URI</span>
-                <time>May 2024 – Current</time>
+                <span>University of Rhode Island</span>
+                <time>Sep 2025 - Present</time>
               </h4>
               <ul>
-                <li>Engineered specialized chatbots by leveraging large language models and retrieval-augmented generation frameworks.</li>
-                <li>Demonstrated capability to develop cohesive systems with Flask and modern front-end technologies.</li>
-                <li>Deployed established APIs like OpenAI and Google to achieve high-quality project results.</li>
+                <li>Engineered multi-agent systems to automate complex analysis and decision pipelines.</li>
+                <li>Built a realistic swarm simulator supporting distributed agent coordination.</li>
+                <li>Developed VR and desktop simulation environments using Unity.</li>
               </ul>
             </div>
           </div>
-          <!-- Experience 2: Computer Engineering Intern -->
           <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>Undergraduate Research Assistant</h3>
+              <h4>
+                <span>University of Rhode Island</span>
+                <time>May 2024 - Present</time>
+              </h4>
+              <ul>
+                <li>Developed specialized AI chatbots using large language models and retrieval-augmented generation.</li>
+                <li>Built cohesive backend systems using Flask and modern front-end tooling.</li>
+                <li>Integrated external APIs to deliver reliable, production-quality systems.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item left">
             <div class="timeline-content">
               <h3>Computer Engineering Intern</h3>
               <h4>
                 <span>Electro Standards Laboratories</span>
-                <time>May 2024 – Jan 2025</time>
+                <time>May 2024 - Jan 2025</time>
               </h4>
               <ul>
-                <li>Developed automation for internal systems via programming a Raspberry Pi with Python and C.</li>
-                <li>Diagnosed and rectified sophisticated electrical challenges by scrutinizing and testing external code.</li>
-                <li>Created comprehensive documentation to facilitate future work.</li>
-                <li>Conducted rigorous testing to evaluate system functionality and identify opportunities for optimization.</li>
+                <li>Automated internal systems using Python and C on Raspberry Pi platforms.</li>
+                <li>Diagnosed and resolved electrical and software issues through systematic testing.</li>
+                <li>Produced technical documentation to support long-term maintainability.</li>
               </ul>
             </div>
           </div>
-          <!-- Experience 3: Software Engineering Intern -->
-          <div class="timeline-item left">
+          <div class="timeline-item right">
             <div class="timeline-content">
               <h3>Software Engineering Intern</h3>
               <h4>
                 <span>IGT</span>
-                <time>Jun 2023 – Dec 2023</time>
+                <time>Jun 2023 - Dec 2023</time>
               </h4>
               <ul>
-                <li>Resolved technical issues on Linux systems using command-line tools.</li>
-                <li>Worked alongside colleagues both remotely and in-person to achieve shared objectives.</li>
-                <li>Developed and executed Bash scripts, C, and C++ for API integration into devices.</li>
-                <li>Implemented advanced Optical Character Recognition techniques to improve system performance and accuracy.</li>
+                <li>Resolved Linux system issues using command-line debugging tools.</li>
+                <li>Developed Bash, C, and C++ code for device-level API integration.</li>
+                <li>Implemented OCR pipelines to improve system accuracy and performance.</li>
               </ul>
             </div>
           </div>
-          <!-- Experience 4: Engineering Intern -->
-          <div class="timeline-item right">
+          <div class="timeline-item left">
             <div class="timeline-content">
               <h3>Engineering Intern</h3>
               <h4>
                 <span>Sage Engineering and Contracting</span>
-                <time>Mar 2022 – Aug 2022</time>
+                <time>Mar 2022 - Aug 2022</time>
               </h4>
               <ul>
-                <li>Assisted professional civil engineers in designing construction site plans and floor layouts using AutoCAD.</li>
-                <li>Assembled and operated an ABB robotic arm to automate and optimize product creation.</li>
-                <li>Supported engineers in developing and managing budgets for various projects.</li>
+                <li>Supported civil engineers with site and floor plan design using AutoCAD.</li>
+                <li>Assembled and operated an ABB robotic arm for automated manufacturing tasks.</li>
+                <li>Assisted with project budgeting and technical planning.</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects section -->
       <section id="projects" class="projects reveal">
         <h2>Projects</h2>
         <div class="project-item">
           <h3>Agentic RAG Chatbot</h3>
           <p>
-            Built a multi‑agent Retrieval‑Augmented Generation (RAG) system integrating LLMs with specialized reasoning chains. Implemented embedding pipelines and vector search (FAISS) for context‑grounded responses, reducing hallucinations by ~30%. Designed modular agent architecture using Hugging Face Transformers for orchestration and reasoning workflows. Packaged as a Dockerized Flask API with CI/CD (GitHub Actions) and AWS deployment; developed custom prompt engineering strategies, routing logic, and tool‑calling capabilities.
+            Built a multi-agent retrieval-augmented generation system integrating large language models with structured reasoning. Implemented embedding pipelines and FAISS vector search to reduce hallucinations and improve response quality. Packaged as a Dockerized Flask API with CI/CD deployment workflows.
           </p>
         </div>
         <div class="project-item">
           <h3>AI Meeting Assistant</h3>
           <p>
-            Engineered an end‑to‑end meeting intelligence platform with audio capture, transcription, summarization, and actionable insights. Leveraged OpenAI Whisper for transcription and GPT‑4 for multi‑view summarization (action items, decisions, agendas). Created multi‑agent processing pipelines with specialized prompt modules for meeting analytics and Jira integration. Built group‑based knowledge organization with persistent context storage for personalized summaries and automated distribution of structured notes.
+            Developed an end-to-end meeting intelligence platform with audio capture, transcription, summarization, and actionable insights. Integrated Whisper and GPT-based models for action-item and agenda extraction, automated structured note distribution, and workflow integration.
           </p>
         </div>
         <div class="project-item">
-          <h3>URI Senior Capstone Project</h3>
+          <h3>Senior Capstone: Robotic Assembly &amp; Inspection</h3>
           <p>
-            Robotic Assembly, Inspection &amp; Test Automation — developed an automated assembly workstation using robotics and visual inspection to enhance PCBA production efficiency. Designed control software to manage robots, conveyors, and sensors, generating production data and reports. Integrated multiple automated assembly subsystems to deliver a cost‑effective, adaptable solution, and modeled physical systems in Fusion 360 with 3D‑printed components for precise integration.
-          </p>
-        </div>
-        <div class="project-item">
-          <h3>Automated Water Mister</h3>
-          <p>
-            Developed a fully integrated water mister system tailored for maintaining optimal conditions for my pet gecko. Utilized embedded systems with advanced BLE chips alongside temperature, humidity, and water level sensors to ensure precise environmental monitoring. Designed custom circuits interfaced with an Arduino and integrated graphics via I2C communication for real-time system feedback. Additionally, employed Fusion 360 for detailed CAD design and 3D printing of components, resulting in a cohesive, adaptable all-in-one mister unit.
+            Designed an automated PCBA assembly and inspection workstation that integrated robotics, sensors, and control software. Modeled mechanical components and fabricated custom parts via 3D printing to deliver a unified system.
           </p>
         </div>
       </section>
 
-      <!-- Honors and activities section -->
       <section id="honors" class="honors reveal">
-        <h2>Honors & Activities</h2>
+        <h2>Honors &amp; Activities</h2>
         <ul>
-          <li>Achieved high honors and was on the Dean's List every semester at URI</li>
-          <li>Received the Raymond M. Wright FastTrack Scholarship for the 2025–2026 academic year</li>
-          <li>Joined the URI wrestling team</li>
-          <li>Accepted into the Accelerated B.S./M.S. (ABM) program at the University of Rhode Island</li>
+          <li>Dean's List (every semester)</li>
+          <li>Raymond M. Wright FastTrack Scholarship (2025-2026)</li>
+          <li>URI Wrestling Team</li>
+          <li>Accelerated B.S./M.S. Program admit</li>
         </ul>
       </section>
 
-      <!-- Contact section -->
       <section id="contact" class="contact reveal">
         <h2>Contact</h2>
-        <p>Location: Montgomery, USA 01085</p>
-        <p>Phone: (413) 265‑5165</p>
-        <p>Email: <a href="mailto:jackdemarinis@uri.edu">jackdemarinis@uri.edu</a></p>
+        <p>Location: Montgomery, MA 01085</p>
+        <p>Phone: (413) 265-5165</p>
+        <p>Email: <a href="mailto:jackfastime@gmail.com">jackfastime@gmail.com</a></p>
         <div style="text-align:center;">
-          <a href="mailto:jackdemarinis@uri.edu" class="cta-button">Get in Touch</a>
-          <a href="Jack_P.DeMarinis_CV.docx" class="cta-button" download style="margin-left:0.5rem;">Download CV</a>
+          <a href="mailto:jackfastime@gmail.com" class="cta-button">Get in Touch</a>
+          <a href="Jack_DeMarinis_CV.pdf" class="cta-button" download style="margin-left:0.5rem;">Download CV</a>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© 2025 Jack P. DeMarinis. All rights reserved.</p>
+      <p>(c) 2025 Jack P. DeMarinis. All rights reserved.</p>
     </footer>
 
-    <!-- Scripts for interactive effects -->
     <script>
-      // Typewriter effect for the tagline
       document.addEventListener('DOMContentLoaded', () => {
         const text = 'Computer engineer building across embedded, robotics, and AI systems.';
         const target = document.getElementById('typewriter');
         let index = 0;
-        
+
         function typeWriter() {
           if (index < text.length) {
             target.textContent += text.charAt(index);
             index++;
             setTimeout(typeWriter, 75);
           } else {
-            // Once typing is done, remove the class that has the blinking cursor
             target.classList.add('typing-done');
           }
         }
-        
-        // Start typing after a brief delay
+
         setTimeout(typeWriter, 1000);
       });
 
-      // Reveal sections on scroll
       function reveal() {
         const reveals = document.querySelectorAll('.reveal');
         for (const element of reveals) {
@@ -298,27 +277,7 @@
         }
       }
       window.addEventListener('scroll', reveal);
-      // Trigger reveal on load
       reveal();
-
-      // Interactive mouse-follow glow and tilt on the profile photo
-      const profile = document.querySelector('.profile-photo');
-      if (profile) {
-        profile.addEventListener('mousemove', (event) => {
-          const rect = profile.getBoundingClientRect();
-          const x = event.clientX - rect.left;
-          const y = event.clientY - rect.top;
-          profile.style.setProperty('--mx', x + 'px');
-          profile.style.setProperty('--my', y + 'px');
-
-          const tiltX = ((y / rect.height) - 0.5) * -6; // up/down tilt
-          const tiltY = ((x / rect.width) - 0.5) * 6;   // left/right tilt
-          profile.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.03)`;
-        });
-        profile.addEventListener('mouseleave', () => {
-          profile.style.transform = '';
-        });
-      }
     </script>
   </body>
 </html>

@@ -1,10 +1,8 @@
 /*
- * Styles for the space‑themed single page. The dark palette, glowing
- * highlights and crisp typography combine to deliver a futuristic
- * experience. The layout adapts for mobile and desktop with flexbox.
+ * Styles for the space-themed single page. The dark palette, glowing accents,
+ * and crisp typography combine to deliver a futuristic experience.
  */
 
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -19,33 +17,31 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Typewriter effect for the hero tagline */
 .typewriter {
   color: #ddddff;
   font-size: 1.25rem;
   letter-spacing: 0.05em;
-  /* For centering and wrapping */
   display: inline-block;
   text-align: center;
   max-width: 600px;
-  white-space: normal; /* Allow text to wrap */
-  position: relative; /* For pseudo-element positioning */
+  white-space: normal;
+  position: relative;
 }
 
-/* The cursor is now a pseudo-element, so it flows with the text */
 .typewriter::after {
   content: '';
   display: inline-block;
   width: 0.1em;
-  height: 1.1em; /* Should be about the height of the text */
+  height: 1.1em;
   background: #f6511d;
   margin-left: 0.15em;
-  vertical-align: -0.1em; /* Align with the text */
+  vertical-align: -0.1em;
   animation: blink-caret 0.8s step-end infinite;
 }
 
 @keyframes blink-caret {
-  from, to {
+  from,
+  to {
     background-color: transparent;
   }
   50% {
@@ -53,7 +49,6 @@ body {
   }
 }
 
-/* Hide the cursor when typing is finished */
 .typewriter.typing-done::after {
   content: none;
 }
@@ -68,7 +63,6 @@ a {
   text-decoration: none;
 }
 
-/* Navigation bar */
 .navbar {
   position: fixed;
   top: 0;
@@ -105,13 +99,12 @@ a {
     gap: 1rem;
     padding: 0.5rem;
   }
-  
+
   .navbar a {
     font-size: 0.8rem;
   }
 }
 
-/* Hero section */
 .hero {
   position: relative;
   height: 100vh;
@@ -124,7 +117,6 @@ a {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  /* Add padding to account for fixed navbar */
   padding-top: 5rem;
 }
 
@@ -143,13 +135,11 @@ a {
   z-index: 2;
   padding: 0 1rem;
   text-align: center;
-  /* Fade in the hero content with a slight upward motion */
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 2s ease-out forwards;
 }
 
-/* Circular profile photo in the hero */
 .hero .profile-photo {
   width: 160px;
   height: 160px;
@@ -159,8 +149,6 @@ a {
   box-shadow: 0 0 20px rgba(246, 81, 29, 0.4);
   margin: 0 auto 1rem;
   position: relative;
-  will-change: transform;
-  transition: transform 180ms ease;
 }
 
 .hero .profile-photo img {
@@ -168,19 +156,6 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-/* Mouse-follow radial glow */
-.hero .profile-photo::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  background:
-    radial-gradient(120px circle at var(--mx, 50%) var(--my, 50%), rgba(246,81,29,0.35), transparent 60%),
-    radial-gradient(200px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.08), transparent 60%);
-  pointer-events: none;
-  filter: blur(6px);
 }
 
 @keyframes fadeInUp {
@@ -202,7 +177,7 @@ a {
   .hero h1 {
     font-size: 2rem;
   }
-  
+
   .typewriter {
     font-size: 1rem;
     max-width: 95%;
@@ -218,7 +193,6 @@ a {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
-/* Section styles */
 section {
   padding: 4rem 2rem;
 }
@@ -241,24 +215,22 @@ section p {
   section {
     padding: 2rem 1rem;
   }
-  
+
   section h2 {
     font-size: 1.8rem;
   }
-  
+
   section p {
     font-size: 1rem;
   }
 }
 
-/* About section */
 .about p {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* Features section */
 .features {
   display: flex;
   flex-direction: column;
@@ -296,7 +268,6 @@ section p {
   font-size: 1rem;
 }
 
-/* Call to action section */
 .cta {
   position: relative;
   background-image: url('space_bg2.png');
@@ -351,7 +322,6 @@ section p {
   background-color: #d94014;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
@@ -360,7 +330,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Summary, education, experience, projects, honors and contact cards */
 .summary p,
 .education-entry,
 .experience-item,
@@ -375,7 +344,6 @@ footer {
   max-width: 900px;
 }
 
-/* Specific styling for lists */
 .skills-grid {
   display: flex;
   flex-direction: column;
@@ -417,7 +385,7 @@ footer {
 }
 
 .skill-category li::before {
-  content: '•';
+  content: '>';
   color: #f6511d;
   margin-right: 0.4rem;
 }
@@ -463,7 +431,7 @@ footer {
 }
 
 .honors li::before {
-  content: '\2022';
+  content: '-';
   position: absolute;
   left: 0;
   top: 0;
@@ -478,7 +446,6 @@ footer {
   margin-top: 1rem;
 }
 
-/* Timeline styles for the experience section */
 .experience .timeline {
   position: relative;
   max-width: 900px;
@@ -566,13 +533,12 @@ footer {
 }
 
 .experience .timeline-content li::before {
-  content: '•';
+  content: '>';
   position: absolute;
   left: -1rem;
   color: #f6511d;
 }
 
-/* Responsive timeline: full width entries on small screens */
 @media (max-width: 768px) {
   .experience .timeline::after {
     left: 20px;
