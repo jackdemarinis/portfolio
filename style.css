@@ -108,7 +108,7 @@ a {
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('space_bg1.png');
+  background-image: url('space_bg1.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -118,6 +118,12 @@ a {
   text-align: center;
   overflow: hidden;
   padding-top: 5rem;
+}
+
+@supports not (background-image: url('space_bg1.webp')) {
+  .hero {
+    background-image: url('space_bg1.png');
+  }
 }
 
 .hero-overlay {
@@ -270,12 +276,18 @@ section p {
 
 .cta {
   position: relative;
-  background-image: url('space_bg2.png');
+  background-image: url('space_bg2.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: #ffffff;
   text-align: center;
+}
+
+@supports not (background-image: url('space_bg2.webp')) {
+  .cta {
+    background-image: url('space_bg2.png');
+  }
 }
 
 .cta::before {

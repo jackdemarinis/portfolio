@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jack DeMarinis</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload critical assets -->
+    <link rel="preload" href="space_bg1.webp" as="image" type="image/webp" />
+    <link rel="preload" href="Jack_Headshot.webp" as="image" type="image/webp" />
+    <link rel="preload" href="style.css" as="style" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Orbitron:wght@400;700&display=swap"
       rel="stylesheet"
@@ -28,14 +34,17 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="profile-photo">
-          <img
-            src="Jack Headshot.png"
-            alt="Headshot of Jack P. DeMarinis"
-            width="160"
-            height="160"
-            loading="eager"
-            decoding="async"
-          />
+          <picture>
+            <source srcset="Jack_Headshot.webp" type="image/webp" />
+            <img
+              src="Jack Headshot.png"
+              alt="Headshot of Jack P. DeMarinis"
+              width="160"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
         </div>
         <h1>Jack P. DeMarinis</h1>
         <p id="typewriter" class="typewriter"></p>
@@ -273,6 +282,11 @@
       }
       window.addEventListener('scroll', reveal);
       reveal();
+
+      // Register service worker for offline caching
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
     </script>
   </body>
 </html>
