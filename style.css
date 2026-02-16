@@ -359,6 +359,7 @@ footer {
 .skills-grid {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
@@ -372,6 +373,7 @@ footer {
 
 .skill-category {
   flex: 1;
+  min-width: 280px;
   background: #17173a;
   padding: 1.5rem;
   border-radius: 10px;
@@ -423,6 +425,24 @@ footer {
   color: #bbbbcc;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+.project-item ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.project-item li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  color: #bbbbcc;
+}
+
+.project-item li::before {
+  content: '>';
+  position: absolute;
+  left: -1rem;
+  color: #f6511d;
 }
 
 .projects .project-item {

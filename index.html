@@ -21,7 +21,6 @@
   <body>
     <nav class="navbar">
       <ul>
-        <li><a href="#summary">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -53,24 +52,17 @@
     </header>
 
     <main>
-      <section id="summary" class="summary reveal">
-        <h2>About Me</h2>
-        <p>
-          Computer engineer with experience in Generative AI and ML, robotics software, autonomy-adjacent systems, and simulation. Experienced building multi-agent robotic systems using ROS on Linux, integrating real-world sensor data, and developing performance-aware C++ and Python software. Background spans robotics middleware, embedded Linux development, simulation, and AI-driven decision systems. Comfortable working across software and hardware boundaries in test-heavy, iterative environments.
-        </p>
-      </section>
-
       <section id="education" class="education reveal">
         <h2>Education</h2>
         <div class="education-entry">
           <h3>Master of Science: Electrical Engineering</h3>
-          <p>University of Rhode Island - Expected May 2026</p>
+          <p>University of Rhode Island, Kingston, RI - Expected May 2026</p>
           <p>Accelerated B.S./M.S. (ABM) Program</p>
           <p>GPA: 4.00 / 4.00</p>
         </div>
         <div class="education-entry">
           <h3>Bachelor of Science: Computer Engineering</h3>
-          <p>University of Rhode Island - Graduated May 2025</p>
+          <p>University of Rhode Island, Kingston, RI - May 2025</p>
           <p>Minor: Mathematics</p>
           <p>GPA: 3.90 / 4.00</p>
         </div>
@@ -80,11 +72,25 @@
         <h2>Technical Skills</h2>
         <div class="skills-grid">
           <div class="skill-category">
+            <h3>GenAI / LLM</h3>
+            <ul>
+              <li>OpenAI API</li>
+              <li>Gemini API</li>
+              <li>LangChain</li>
+              <li>Agentic architectures</li>
+              <li>MCP servers</li>
+              <li>Retrieval-augmented generation (RAG)</li>
+              <li>Embeddings</li>
+              <li>Prompt engineering</li>
+              <li>Local small language models</li>
+            </ul>
+          </div>
+          <div class="skill-category">
             <h3>Languages</h3>
             <ul>
+              <li>Python</li>
               <li>C++</li>
               <li>C</li>
-              <li>Python</li>
               <li>Bash</li>
               <li>JavaScript</li>
               <li>HTML/CSS</li>
@@ -93,41 +99,36 @@
             </ul>
           </div>
           <div class="skill-category">
-            <h3>Robotics &amp; Systems</h3>
+            <h3>Tools &amp; Design</h3>
             <ul>
+              <li>Visual Studio Code</li>
+              <li>Unity</li>
+              <li>Fusion 360</li>
+              <li>AutoCAD</li>
+              <li>MATLAB</li>
+              <li>Multisim</li>
+              <li>Mathcad</li>
+              <li>VHDL</li>
+              <li>OpenMV IDE</li>
+              <li>Git / GitHub</li>
               <li>ROS / ROS2</li>
-              <li>Linux (Ubuntu)</li>
-              <li>Docker</li>
-              <li>Robotics middleware</li>
-              <li>Simulation pipelines</li>
-              <li>Sensor integration (odometry, RGB-D)</li>
-              <li>Real-time data processing</li>
-              <li>SWARM</li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>AI / Autonomy Tooling</h3>
+            <h3>ML / AI</h3>
             <ul>
               <li>PyTorch</li>
               <li>Hugging Face Transformers</li>
-              <li>Retrieval-augmented generation (RAG)</li>
-              <li>Embeddings</li>
-              <li>FAISS vector search</li>
-              <li>LLM-based decision systems</li>
-              <li>GCP</li>
+              <li>Hugging Face Datasets</li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>Engineering Tools</h3>
+            <h3>Backend / Systems</h3>
             <ul>
-              <li>Unity (3D simulation &amp; visualization)</li>
-              <li>MATLAB</li>
-              <li>Fusion 360</li>
-              <li>AutoCAD</li>
-              <li>LTSpice</li>
-              <li>Multisim</li>
-              <li>VHDL</li>
-              <li>OpenMV IDE</li>
+              <li>Linux</li>
+              <li>Docker</li>
+              <li>Google Cloud Console (GCP)</li>
+              <li>PostgreSQL</li>
             </ul>
           </div>
         </div>
@@ -140,13 +141,15 @@
             <div class="timeline-content">
               <h3>Graduate Research Assistant</h3>
               <h4>
-                <span>University of Rhode Island</span>
+                <span>University of Rhode Island, Kingston, RI</span>
                 <time>Sep 2025 - Present</time>
               </h4>
               <ul>
-                <li>Worked on SWARM simulation through Unity using decision-making pipelines, emphasizing reliability, observability, and fault handling.</li>
-                <li>Developed VR simulation environments to exercise system behavior.</li>
-                <li>Implemented reproducible Docker-based workflows to support consistent builds, testing, and deployments across machines.</li>
+                <li>Designed agentic, multi-step decision pipelines with tool calling and structured outputs to improve reliability across complex workflows.</li>
+                <li>Built reusable MCP-style tool interfaces connecting LLMs to external services and internal utilities.</li>
+                <li>Implemented simulation environments for swarm robotics in 2D, 3D, and VR using Pygame and Unity and latency-sensitive behaviors.</li>
+                <li>Developed reproducible Linux and Docker workflows to support consistent builds and deployments across machines.</li>
+                <li>Implemented and maintained a PostgreSQL database to support reliable data storage and fast query access.</li>
               </ul>
             </div>
           </div>
@@ -154,12 +157,13 @@
             <div class="timeline-content">
               <h3>Undergraduate Research Assistant</h3>
               <h4>
-                <span>University of Rhode Island</span>
+                <span>University of Rhode Island, Kingston, RI</span>
                 <time>May 2024 - Aug 2025</time>
               </h4>
               <ul>
-                <li>Built and evaluated backend software components supporting LLM decision workflows.</li>
-                <li>Developed and tested custom RAG pipelines for context management using FAISS and BM25-based retrieval (vector and keyword search).</li>
+                <li>Built LLM features using RAG, improving factual grounding across evaluation prompts.</li>
+                <li>Integrated LLM capabilities using OpenAI's API in combination with GCP, connecting to Gmail and Google Calendar and implementing Google OAuth for secure sign-in.</li>
+                <li>Developed and shipped backend services supporting AI workflows handling hundreds of requests per day.</li>
                 <li>Created evaluation scripts to compare LLM variants using consistent test sets and measurable latency, cost, and output-quality criteria.</li>
               </ul>
             </div>
@@ -168,14 +172,13 @@
             <div class="timeline-content">
               <h3>Computer Engineering Intern</h3>
               <h4>
-                <span>Electro Standards Laboratories</span>
+                <span>Electro Standards Laboratories, Cranston, RI</span>
                 <time>May 2024 - Jan 2025</time>
               </h4>
               <ul>
-                <li>Developed and maintained embedded Linux software using C and Python.</li>
-                <li>Troubleshot electrical and software issues through hands-on testing and system-level debugging.</li>
-                <li>Collaborated with hardware and engineering teams to validate system behavior and reliability.</li>
-                <li>Authored technical documentation supporting long-term maintainability and deployment.</li>
+                <li>Developed Python and C software on embedded Linux platforms, improving system reliability through repeatable test routines.</li>
+                <li>Diagnosed and resolved electrical and software issues using structured debugging, instrumentation, and logging.</li>
+                <li>Produced clear technical documentation to improve maintainability and team handoff.</li>
               </ul>
             </div>
           </div>
@@ -183,13 +186,13 @@
             <div class="timeline-content">
               <h3>Software Engineering Intern</h3>
               <h4>
-                <span>IGT</span>
+                <span>IGT, West Greenwich, RI</span>
                 <time>Jun 2023 - Dec 2023</time>
               </h4>
               <ul>
-                <li>Debugged and resolved Linux system issues using low-level command-line and system analysis tools.</li>
-                <li>Developed Bash, C, and C++ software for device-level API integration.</li>
-                <li>Implemented and evaluated OCR pipelines to improve system accuracy and robustness.</li>
+                <li>Resolved Linux system issues using low-level command-line debugging and root-cause analysis.</li>
+                <li>Developed Bash, C, and C++ code for device-level integrations and internal tooling.</li>
+                <li>Implemented OCR pipelines and validation checks to improve system accuracy and robustness.</li>
               </ul>
             </div>
           </div>
@@ -200,33 +203,36 @@
         <h2>Projects</h2>
         <div class="project-item">
           <h3>AI Meeting Assistant</h3>
-          <p>
-            Developed an end-to-end meeting intelligence platform including transcription and summarization. Integrated speech-to-text systems with LLM-based action item and agenda extraction, emphasizing modular design and reliability across varying input conditions.
-          </p>
+          <ul>
+            <li>Shipped a production full-stack app and deployment workflow on Railway with a PostgreSQL-backed data model for durable meeting artifacts.</li>
+            <li>Designed an LLM workflow with schema-first JSON outputs plus validation to standardize summaries and action items for downstream integrations.</li>
+            <li>Built reliability into the pipeline (retries, idempotent writes, explicit failure states) to prevent partial processing and inconsistent data.</li>
+            <li>Created reusable prompts/templates and documentation to make the workflow repeatable for new users and future features.</li>
+          </ul>
           <a href="https://www.meetingmuncher.com/" target="_blank" rel="noopener noreferrer" class="project-link">
             Visit Meeting Muncher          </a>
         </div>
         <div class="project-item">
           <h3>Senior Capstone: Robotic Assembly &amp; Inspection</h3>
-          <p>
-            Designed an automated PCBA assembly and inspection workstation. Integrated robotics hardware, sensors, and control software into a unified system, and fabricated custom parts using 3D printing.
-          </p>
+          <ul>
+            <li>Built a modular automation workcell for through-hole PCBA assembly and inspection.</li>
+            <li>Designed end effectors, fixtures, and feeder hardware in CAD; iterated via rapid prototyping.</li>
+            <li>Integrated OpenMV vision for pose/orientation detection and UART/serial signaling to control code.</li>
+            <li>Wrote documentation and handoff notes (design decisions, layout, troubleshooting).</li>
+            <li>Presented the final system to a large audience, covering results and design tradeoffs.</li>
+          </ul>
           <a href="CPR - Hayward Industries.pdf" target="_blank" rel="noopener noreferrer" class="project-link">
             View Project Report          </a>
         </div>
         <div class="project-item">
           <h3>Agentic RAG Chatbot</h3>
-          <p>
-            Built a multi-agent retrieval-augmented generation system for structured reasoning. Implemented embedding pipelines and FAISS-based vector search to reduce hallucinations and improve response quality. Deployed as a Dockerized Flask API designed for iterative testing.
-          </p>
+          <ul>
+            <li>Built a multi-agent retrieval-augmented generation system for structured reasoning.</li>
+            <li>Implemented embedding pipelines and FAISS-based vector search to reduce hallucinations and improve response quality.</li>
+            <li>Deployed the system as a Dockerized Flask API designed for iterative testing and evaluation.</li>
+          </ul>
           <a href="https://www.ele.uri.edu/chat" target="_blank" rel="noopener noreferrer" class="project-link">
             Try the Chatbot          </a>
-        </div>
-        <div class="project-item">
-          <h3>LLM Robotics</h3>
-          <p>
-            Built and simulated a TurtleBot-style Waffle robot using ROS on Linux, integrating odometry and RGB-D camera data into a unified perception pipeline. Designed ROS nodes to publish structured state representations and connected real-time observations to a large language model for high-level reasoning and decision-making.
-          </p>
         </div>
       </section>
 
@@ -279,7 +285,7 @@
             >
               LinkedIn
             </a>
-            <a href="Jack_DeMarinis_resume.pdf" class="social-button contact-button" download>
+            <a href="Jack_DeMarinis_Resume.pdf" class="social-button contact-button" download>
               Resume
             </a>
             <a href="mailto:jackdemarinis9232@gmail.com" class="cta-button contact-button">Get in Touch</a>
