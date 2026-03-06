@@ -120,12 +120,6 @@ a {
   padding-top: 5rem;
 }
 
-@supports not (background-image: url('space_bg1.webp')) {
-  .hero {
-    background-image: url('space_bg1.png');
-  }
-}
-
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -282,12 +276,6 @@ section p {
   background-attachment: fixed;
   color: #ffffff;
   text-align: center;
-}
-
-@supports not (background-image: url('space_bg2.webp')) {
-  .cta {
-    background-image: url('space_bg2.png');
-  }
 }
 
 .cta::before {

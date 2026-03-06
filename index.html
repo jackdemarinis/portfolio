@@ -13,9 +13,17 @@
     <link rel="preload" href="Jack_Headshot.webp" as="image" type="image/webp" />
     <link rel="preload" href="style.css" as="style" />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Orbitron:wght@400;700&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -37,7 +45,7 @@
           <picture>
             <source srcset="Jack_Headshot.webp" type="image/webp" />
             <img
-              src="Jack Headshot.png"
+              src="Jack_Headshot.webp"
               alt="Headshot of Jack P. DeMarinis"
               width="160"
               height="160"
@@ -285,7 +293,7 @@
             >
               LinkedIn
             </a>
-            <a href="Jack_DeMarinis_Resume.pdf" class="social-button contact-button" download>
+            <a href="Jack_DeMarinis_resume.pdf" class="social-button contact-button" download>
               Resume
             </a>
             <a href="mailto:jackdemarinis9232@gmail.com" class="cta-button contact-button">Get in Touch</a>

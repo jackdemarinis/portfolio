@@ -14,10 +14,10 @@ Space-themed, single-page portfolio for showcasing education, skills, projects, 
 ```
 index.html               # Content and structure
 style.css                # Theme and layout
-space_bg1.png            # Hero background
-space_bg2.png            # CTA/background accent
-Jack Headshot.png        # Circular headshot in hero
-Jack_DeMarinis_CV.pdf    # Downloadable CV (linked from Contact section)
+space_bg1.webp           # Hero background
+space_bg2.webp           # CTA/background accent
+Jack_Headshot.webp       # Circular headshot in hero
+Jack_DeMarinis_resume.pdf # Downloadable resume (linked from Contact section)
 ```
 
 ## Run locally
@@ -30,8 +30,8 @@ Jack_DeMarinis_CV.pdf    # Downloadable CV (linked from Contact section)
 - Content: edit `index.html`
   - About, Education, Skills, Experience, Projects, Honors, Contact
   - Typewriter text: update the `text` constant near the bottom of `index.html`
-- Headshot: replace `Jack Headshot.png` (keep the same filename for the hero image)
-- CV download: replace `Jack_DeMarinis_CV.pdf` (filename is referenced by the Download button)
+- Headshot: replace `Jack_Headshot.webp` (keep the same filename for the hero image)
+- Resume download: replace `Jack_DeMarinis_resume.pdf` (filename is referenced by the Download button)
 - Styles (colors/spacing/typography/effects): edit `style.css`
 
 ## Deploy (GitHub Pages)
