@@ -145,10 +145,10 @@
         <h2>Experience</h2>
         <div class="timeline-board">
           <div class="timeline-scale" aria-hidden="true">
-            <span style="--marker: 0%">Sep 2022</span>
-            <span style="--marker: 37.2%">Jan 2024</span>
-            <span style="--marker: 65.1%">Jan 2025</span>
-            <span style="--marker: 100%">Present</span>
+            <span data-date="2022-09-01">Sep 2022</span>
+            <span data-date="2024-01-01">Jan 2024</span>
+            <span data-date="2025-01-01">Jan 2025</span>
+            <span data-date="present">Present</span>
           </div>
 
           <article class="timeline-entry">
@@ -160,7 +160,7 @@
               <time>Sep 2025 - Present</time>
             </div>
             <div class="timeline-track" aria-hidden="true">
-              <span class="timeline-bar timeline-bar-research" style="--start: 83.72%; --span: 16.28%;"></span>
+              <span class="timeline-bar timeline-bar-research" data-start="2025-09-01" data-end="present"></span>
             </div>
             <ul>
               <li>Designed agentic, multi-step decision pipelines with tool calling and structured outputs to improve reliability across complex workflows.</li>
@@ -179,7 +179,7 @@
               <time>Jan 2026 - Present</time>
             </div>
             <div class="timeline-track" aria-hidden="true">
-              <span class="timeline-bar timeline-bar-builder" style="--start: 93.02%; --span: 6.98%;"></span>
+              <span class="timeline-bar timeline-bar-builder" data-start="2026-01-01" data-end="present"></span>
             </div>
             <ul>
               <li>Built custom LLM and TTS software tools using the OpenAI API and ElevenLabs API.</li>
@@ -197,7 +197,7 @@
               <time>May 2024 - Aug 2025</time>
             </div>
             <div class="timeline-track" aria-hidden="true">
-              <span class="timeline-bar timeline-bar-research-alt" style="--start: 46.51%; --span: 37.21%;"></span>
+              <span class="timeline-bar timeline-bar-research-alt" data-start="2024-05-01" data-end="2025-08-31"></span>
             </div>
             <ul>
               <li>Built LLM features using RAG, improving factual grounding across evaluation prompts.</li>
@@ -216,7 +216,7 @@
               <time>May 2024 - Jan 2025</time>
             </div>
             <div class="timeline-track" aria-hidden="true">
-              <span class="timeline-bar timeline-bar-industry" style="--start: 46.51%; --span: 20.93%;"></span>
+              <span class="timeline-bar timeline-bar-industry" data-start="2024-05-01" data-end="2025-01-31"></span>
             </div>
             <ul>
               <li>Developed Python and C software on embedded Linux platforms, improving system reliability through repeatable test routines.</li>
@@ -234,7 +234,7 @@
               <time>Jun 2023 - Dec 2023</time>
             </div>
             <div class="timeline-track" aria-hidden="true">
-              <span class="timeline-bar timeline-bar-industry-alt" style="--start: 20.93%; --span: 16.28%;"></span>
+              <span class="timeline-bar timeline-bar-industry-alt" data-start="2023-06-01" data-end="2023-12-31"></span>
             </div>
             <ul>
               <li>Resolved Linux system issues using low-level command-line debugging and root-cause analysis.</li>
@@ -252,7 +252,7 @@
               <time>Sep 2022 - May 2024</time>
             </div>
             <div class="timeline-track" aria-hidden="true">
-              <span class="timeline-bar timeline-bar-support" style="--start: 0%; --span: 48.84%;"></span>
+              <span class="timeline-bar timeline-bar-support" data-start="2022-09-01" data-end="2024-05-31"></span>
             </div>
             <ul>
               <li>Provided technical support and customer service to assist and guide users of URI technologies and tools.</li>
@@ -407,6 +407,25 @@
       window.addEventListener('scroll', reveal);
       reveal();
 
+      (function renderTimeline() {
+        const anchor = new Date(2022, 8, 1).getTime();
+        const now = Date.now();
+        const total = now - anchor;
+        const parse = (v) => v === 'present' ? now : new Date(v + 'T00:00:00').getTime();
+        const pct = (t) => ((t - anchor) / total) * 100;
+
+        document.querySelectorAll('.timeline-bar[data-start]').forEach((bar) => {
+          const start = parse(bar.dataset.start);
+          const end = parse(bar.dataset.end || 'present');
+          bar.style.setProperty('--start', pct(start).toFixed(2) + '%');
+          bar.style.setProperty('--span', (pct(end) - pct(start)).toFixed(2) + '%');
+        });
+
+        document.querySelectorAll('.timeline-scale span[data-date]').forEach((span) => {
+          const t = parse(span.dataset.date);
+          span.style.setProperty('--marker', pct(t).toFixed(2) + '%');
+        });
+      })();
     </script>
   </body>
 </html>
