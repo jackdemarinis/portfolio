@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jack P. DeMarinis — Software Engineer</title>
+    <link rel="icon" type="image/webp" href="favicon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f6f4ef;
+        --paper-raised: #fffefb;
+        --ink: #16150f;
+        --ink-soft: #57544a;
+        --ink-faint: #8d8a7e;
+        --rule: #ddd8cc;
+        --accent: #c2410c;
+        --accent-soft: rgba(194, 65, 12, 0.1);
+        --serif: 'Fraunces', Georgia, serif;
+        --sans: 'Inter', system-ui, sans-serif;
+        --mono: 'JetBrains Mono', ui-monospace, monospace;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #12110e;
+          --paper-raised: #1a1815;
+          --ink: #f2efe6;
+          --ink-soft: #a8a294;
+          --ink-faint: #78736a;
+          --rule: #2b2823;
+          --accent: #f6511d;
+          --accent-soft: rgba(246, 81, 29, 0.14);
+        }
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .label {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+      }
+
+      /* ---------- shell ---------- */
+      .shell {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      @media (min-width: 1000px) {
+        .shell {
+          grid-template-columns: 320px minmax(0, 1fr);
+          gap: 5rem;
+        }
+      }
+
+      /* ---------- left rail ---------- */
+      .rail {
+        padding: 4rem 0 2rem;
+      }
+
+      @media (min-width: 1000px) {
+        .rail {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+          padding: 6rem 0 3rem;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .rail-photo {
+        width: 78px;
+        height: 78px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(100%);
+        border: 1px solid var(--rule);
+        margin-bottom: 1.5rem;
+      }
+
+      .rail h1 {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 2.5rem;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+
+      .rail-role {
+        margin-top: 0.75rem;
+        font-size: 1rem;
+        color: var(--ink-soft);
+        max-width: 30ch;
+      }
+
+      .rail-role strong { color: var(--ink); font-weight: 600; }
+
+      .rail-loc {
+        margin-top: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+      }
+
+      .rail-nav {
+        margin-top: 3rem;
+        display: none;
+      }
+
+      @media (min-width: 1000px) { .rail-nav { display: block; } }
+
+      .rail-nav a {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 0.42rem 0;
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        transition: color 0.25s ease;
+      }
+
+      .rail-nav a::before {
+        content: '';
+        width: 22px;
+        height: 1px;
+        background: currentColor;
+        transition: width 0.25s ease, background 0.25s ease;
+      }
+
+      .rail-nav a:hover,
+      .rail-nav a.active { color: var(--ink); }
+      .rail-nav a.active::before { width: 48px; background: var(--accent); }
+
+      .rail-links {
+        margin-top: auto;
+        padding-top: 2.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+      }
+
+      .rail-links a {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 2px;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .rail-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+      /* ---------- content ---------- */
+      .content { padding: 2rem 0 6rem; }
+
+      @media (min-width: 1000px) { .content { padding: 6rem 0 8rem; } }
+
+      .block { padding: 3rem 0; border-top: 1px solid var(--rule); }
+      .block:first-child { border-top: none; padding-top: 0; }
+
+      .block-head {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 2.25rem;
+      }
+
+      .block-head h2 {
+        font-family: var(--serif);
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .lede {
+        font-family: var(--serif);
+        font-size: 1.35rem;
+        line-height: 1.55;
+        letter-spacing: -0.01em;
+        max-width: 34ch;
+      }
+
+      .lede + p {
+        margin-top: 1.25rem;
+        color: var(--ink-soft);
+        max-width: 58ch;
+      }
+
+      /* entries */
+      .entry {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.35rem 2rem;
+        padding: 1.35rem 1rem 1.35rem 1rem;
+        margin: 0 -1rem;
+        border-radius: 6px;
+        transition: background 0.25s ease;
+      }
+
+      @media (min-width: 720px) {
+        .entry { grid-template-columns: 120px minmax(0, 1fr); }
+      }
+
+      .entry:hover { background: var(--paper-raised); }
+
+      .entry-date {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        padding-top: 0.35rem;
+      }
+
+      .entry h3 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        letter-spacing: -0.005em;
+      }
+
+      .entry h3 span { color: var(--ink-soft); font-weight: 400; }
+
+      .entry ul {
+        margin-top: 0.7rem;
+        list-style: none;
+        display: grid;
+        gap: 0.4rem;
+      }
+
+      .entry li {
+        position: relative;
+        padding-left: 1.1rem;
+        color: var(--ink-soft);
+        font-size: 0.94rem;
+      }
+
+      .entry li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 5px;
+        height: 1px;
+        background: var(--accent);
+      }
+
+      .tags { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+      .tag {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+        color: var(--ink-soft);
+        border: 1px solid var(--rule);
+        border-radius: 999px;
+        padding: 0.18rem 0.6rem;
+      }
+
+      .arrow-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 0.9rem;
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .arrow-link span { transition: transform 0.25s ease; }
+      .arrow-link:hover span { transform: translate(3px, -3px); }
+
+      /* skills */
+      .skills-cols {
+        display: grid;
+        gap: 1.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .skill-col h3 {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        padding-bottom: 0.6rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .skill-col ul { list-style: none; display: grid; gap: 0.28rem; }
+      .skill-col li { font-size: 0.92rem; color: var(--ink-soft); }
+
+      /* honors */
+      .honors-list { list-style: none; display: grid; gap: 0.75rem; }
+
+      .honors-list li {
+        display: flex;
+        gap: 0.9rem;
+        align-items: baseline;
+        font-size: 0.96rem;
+        color: var(--ink-soft);
+        padding-bottom: 0.75rem;
+        border-bottom: 1px dashed var(--rule);
+      }
+
+      .honors-list li:last-child { border-bottom: none; }
+      .honors-list .label { flex-shrink: 0; width: 3.5ch; }
+
+      /* contact */
+      .contact-row {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin-bottom: 2.25rem;
+      }
+
+      .contact-row a, .contact-row span.v {
+        display: block;
+        margin-top: 0.3rem;
+        font-size: 1rem;
+        color: var(--ink);
+      }
+
+      .contact-row a:hover { color: var(--accent); }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.4rem;
+        border-radius: 999px;
+        border: 1px solid var(--ink);
+        font-size: 0.88rem;
+        font-weight: 500;
+        transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+      }
+
+      .btn:hover { background: var(--ink); color: var(--paper); }
+      .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+      .btn-primary:hover { background: transparent; color: var(--accent); border-color: var(--accent); }
+
+      .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+      footer {
+        border-top: 1px solid var(--rule);
+        padding: 2rem 0;
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* reveal */
+      .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .reveal.visible { opacity: 1; transform: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        html { scroll-behavior: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="rail">
+        <img class="rail-photo" src="Jack_Headshot.webp" alt="Jack P. DeMarinis" width="78" height="78" />
+        <h1>Jack P.<br />DeMarinis</h1>
+        <p class="rail-role">
+          <strong>Software Engineer II</strong> at Raytheon. Production C++ for phased array radar &mdash;
+          plus generative AI systems and robotics on the side.
+        </p>
+        <p class="rail-loc label"><span class="dot"></span> Marlborough, MA</p>
+
+        <nav class="rail-nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="rail-links">
+          <a href="https://github.com/jackdemarinis" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/jack-demarinis-2a0196257" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="Jack_DeMarinis_Resume.pdf" download>Resume</a>
+          <a href="mailto:jackdemarinis9232@gmail.com">Email</a>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section id="about" class="block reveal">
+          <p class="lede">
+            I write software that has to work the first time &mdash; radar systems, embedded
+            hardware, and AI pipelines that people actually depend on.
+          </p>
+          <p>
+            Today I build production C++ inside a large-scale phased array radar codebase at Raytheon,
+            working across a complex multi-module repository in a Linux environment. Before that I spent
+            two years as a generative AI research assistant at URI, shipping agentic LLM pipelines,
+            retrieval systems, and the backend services around them. I hold a B.S. in Computer
+            Engineering and an M.S. in Electrical Engineering, both from the University of Rhode Island.
+          </p>
+        </section>
+
+        <section id="experience" class="block reveal">
+          <div class="block-head">
+            <span class="label">01</span>
+            <h2>Experience</h2>
+          </div>
+
+          <article class="entry">
+            <div class="entry-date">Jun 2026 &mdash;<br />Present</div>
+            <div>
+              <h3>Software Engineer II <span>&middot; Raytheon</span></h3>
+              <ul>
+                <li>Develop production C++ within a large-scale radar codebase, navigating a complex multi-module repository.</li>
+                <li>Build and integrate software for phased array radar systems.</li>
+                <li>Work in a Linux development environment.</li>
+                <li>Collaborate across an engineering team using Jira and GitHub for version control and issue tracking.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">C++</span><span class="tag">Linux</span><span class="tag">Radar</span><span class="tag">Git</span><span class="tag">Jira</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">Sep 2025 &mdash;<br />Present</div>
+            <div>
+              <h3>Graduate Generative AI Research Assistant <span>&middot; University of Rhode Island</span></h3>
+              <ul>
+                <li>Designed agentic, multi-step decision pipelines with tool calling and structured outputs to improve reliability across complex workflows.</li>
+                <li>Built reusable MCP-style tool interfaces connecting LLMs to external services and internal utilities.</li>
+                <li>Developed Linux and Docker workflows for consistent builds and deployments across machines.</li>
+                <li>Implemented and maintained a PostgreSQL database for reliable storage and fast query access.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">LLM agents</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">Jan 2026 &mdash;<br />May 2026</div>
+            <div>
+              <h3>Computer Engineering Intern <span>&middot; FireSale (Remote)</span></h3>
+              <ul>
+                <li>Built custom LLM and TTS software tools using the OpenAI API and ElevenLabs API.</li>
+                <li>Created standalone full-stack prototypes to quickly develop and demonstrate new ideas.</li>
+                <li>Communicated effectively in a remote workspace to keep projects documented and execution on track.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">May 2024 &mdash;<br />Aug 2025</div>
+            <div>
+              <h3>Undergraduate Generative AI Research Assistant <span>&middot; University of Rhode Island</span></h3>
+              <ul>
+                <li>Built LLM features using RAG, improving factual grounding across evaluation prompts.</li>
+                <li>Integrated OpenAI's API with GCP &mdash; Gmail, Google Calendar, and Google OAuth for secure sign-in.</li>
+                <li>Developed and shipped backend services supporting AI workflows handling hundreds of requests per day.</li>
+                <li>Created evaluation scripts comparing model and prompt variants on latency, cost, and output quality.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">May 2024 &mdash;<br />Jan 2025</div>
+            <div>
+              <h3>Computer Engineering Intern <span>&middot; Electro Standards Laboratories</span></h3>
+              <ul>
+                <li>Developed Python and C software on embedded Linux platforms, improving reliability through repeatable test routines.</li>
+                <li>Diagnosed and resolved electrical and software issues using debugging, instrumentation, and logging.</li>
+                <li>Produced clear technical documentation to improve maintainability and team handoff.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">Jun 2023 &mdash;<br />Dec 2023</div>
+            <div>
+              <h3>Software Engineering Intern <span>&middot; IGT</span></h3>
+              <ul>
+                <li>Resolved Linux system issues using low-level command-line debugging and root-cause analysis.</li>
+                <li>Developed Bash, C, and C++ code for device-level integrations and internal tooling.</li>
+                <li>Implemented OCR pipelines and validation checks to improve system accuracy and robustness.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">Sep 2022 &mdash;<br />May 2024</div>
+            <div>
+              <h3>IT Consultant <span>&middot; URI IT Service Desk</span></h3>
+              <ul>
+                <li>Provided technical support and guidance to users of URI technologies and tools.</li>
+                <li>Troubleshot a broad range of computer issues across macOS and Windows environments.</li>
+                <li>Used a standard IT ticketing system to document issues and communicate updates.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <section id="projects" class="block reveal">
+          <div class="block-head">
+            <span class="label">02</span>
+            <h2>Selected Projects</h2>
+          </div>
+
+          <article class="entry">
+            <div class="entry-date">01</div>
+            <div>
+              <h3>Meeting Muncher <span>&middot; AI Meeting Assistant</span></h3>
+              <ul>
+                <li>Shipped a production full-stack app and deployment workflow on Railway with a PostgreSQL-backed data model for durable meeting artifacts.</li>
+                <li>Designed an LLM workflow with schema-first JSON outputs and validation to standardize summaries and action items.</li>
+                <li>Built reliability into the pipeline &mdash; retries, idempotent writes, explicit failure states.</li>
+              </ul>
+              <a class="arrow-link" href="https://www.meetingmuncher.com/" target="_blank" rel="noopener noreferrer">Visit site <span>&#8599;</span></a>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">02</div>
+            <div>
+              <h3>Robotic Assembly &amp; Inspection <span>&middot; Senior Capstone</span></h3>
+              <ul>
+                <li>Built a modular automation workcell for through-hole PCBA assembly and inspection.</li>
+                <li>Designed end effectors, fixtures, and feeder hardware in CAD, iterated via rapid prototyping.</li>
+                <li>Integrated OpenMV vision for pose detection and UART/serial signaling to control code.</li>
+                <li>Presented the final system to a large audience, covering results and design tradeoffs.</li>
+              </ul>
+              <a class="arrow-link" href="CPR - Hayward Industries.pdf" target="_blank" rel="noopener noreferrer">Project report <span>&#8599;</span></a>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">03</div>
+            <div>
+              <h3>LLM Robotics</h3>
+              <ul>
+                <li>Built and simulated a mobile robot using ROS, integrating odometry and RGB-D camera streams.</li>
+                <li>Worked with SLAM-generated localization and mapping outputs to support downstream state awareness.</li>
+                <li>Designed ROS nodes to preprocess sensor data and publish structured state representations.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">04</div>
+            <div>
+              <h3>Project Pickle <span>&middot; Arduino Mister &amp; Water Level Control</span></h3>
+              <ul>
+                <li>Developed an Arduino-based embedded system for environmental monitoring and remote misting control.</li>
+                <li>Integrated DHT11 sensing, analog water level measurement, Bluetooth comms, and OLED visualization.</li>
+                <li>Designed and assembled a custom 3D-printed enclosure for a fully working prototype.</li>
+              </ul>
+              <a class="arrow-link" href="https://github.com/jackdemarinis/ProjectPickle" target="_blank" rel="noopener noreferrer">GitHub repo <span>&#8599;</span></a>
+            </div>
+          </article>
+        </section>
+
+        <section id="skills" class="block reveal">
+          <div class="block-head">
+            <span class="label">03</span>
+            <h2>Technical Skills</h2>
+          </div>
+          <div class="skills-cols">
+            <div class="skill-col">
+              <h3>Languages</h3>
+              <ul>
+                <li>C++</li><li>C</li><li>Python</li><li>Bash</li><li>JavaScript</li><li>HTML / CSS</li><li>MIPS Assembly</li><li>LC-3</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h3>GenAI / LLM</h3>
+              <ul>
+                <li>OpenAI API</li><li>Gemini API</li><li>LangChain</li><li>Agentic architectures</li><li>MCP servers</li><li>RAG</li><li>Embeddings</li><li>Prompt engineering</li><li>Local small language models</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h3>Systems &amp; Backend</h3>
+              <ul>
+                <li>Linux</li><li>Docker</li><li>PostgreSQL</li><li>Google Cloud (GCP)</li><li>Git / GitHub</li><li>Jira</li><li>ROS / ROS2</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h3>ML &amp; Hardware</h3>
+              <ul>
+                <li>PyTorch</li><li>Hugging Face Transformers</li><li>Hugging Face Datasets</li><li>VHDL</li><li>MATLAB</li><li>Multisim</li><li>Fusion 360 / AutoCAD</li><li>OpenMV IDE</li><li>Unity</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="block reveal">
+          <div class="block-head">
+            <span class="label">04</span>
+            <h2>Education</h2>
+          </div>
+          <article class="entry">
+            <div class="entry-date">May 2026</div>
+            <div>
+              <h3>M.S. Electrical Engineering <span>&middot; University of Rhode Island</span></h3>
+              <ul>
+                <li>Accelerated B.S./M.S. (ABM) Program &mdash; GPA 4.00 / 4.00</li>
+              </ul>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="entry-date">May 2025</div>
+            <div>
+              <h3>B.S. Computer Engineering <span>&middot; University of Rhode Island</span></h3>
+              <ul>
+                <li>Minor in Mathematics &mdash; GPA 3.90 / 4.00</li>
+              </ul>
+            </div>
+          </article>
+
+          <ul class="honors-list" style="margin-top: 2rem">
+            <li><span class="label">01</span> Dean's List &mdash; every semester, undergraduate and graduate</li>
+            <li><span class="label">02</span> Raymond M. Wright FastTrack Scholarship, 2025&ndash;2026</li>
+            <li><span class="label">03</span> URI Club Wrestling Team</li>
+            <li><span class="label">04</span> Westfield High School Varsity Soccer Captain</li>
+          </ul>
+        </section>
+
+        <section id="contact" class="block reveal">
+          <div class="block-head">
+            <span class="label">05</span>
+            <h2>Get in touch</h2>
+          </div>
+          <div class="contact-row">
+            <div>
+              <span class="label">Email</span>
+              <a href="mailto:jackdemarinis9232@gmail.com">jackdemarinis9232@gmail.com</a>
+            </div>
+            <div>
+              <span class="label">Phone</span>
+              <a href="tel:+14132655165">(413) 265-5165</a>
+            </div>
+            <div>
+              <span class="label">Location</span>
+              <span class="v">Marlborough, Massachusetts</span>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="mailto:jackdemarinis9232@gmail.com">Send an email</a>
+            <a class="btn" href="Jack_DeMarinis_Resume.pdf" download>Download resume</a>
+            <a class="btn" href="https://github.com/jackdemarinis" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/jack-demarinis-2a0196257" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </section>
+
+        <footer>
+          <span>&copy; 2026 Jack P. DeMarinis</span>
+          <span>Built by hand &mdash; HTML &amp; CSS</span>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { rootMargin: '0px 0px -60px 0px' }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+      const links = [...document.querySelectorAll('.rail-nav a')];
+      const spy = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (!e.isIntersecting) continue;
+            links.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+          }
+        },
+        { rootMargin: '-45% 0px -50% 0px' }
+      );
+      document.querySelectorAll('section[id]').forEach((s) => spy.observe(s));
+    </script>
+  </body>
+</html>
