@@ -11,20 +11,13 @@
     <!-- Preload critical assets -->
     <link rel="preload" href="space_bg1.webp" as="image" type="image/webp" />
     <link rel="preload" href="Jack_Headshot.webp" as="image" type="image/webp" />
-    <link rel="preload" href="style.css" as="style" />
+    <!-- Load order: fonts, then the shared theme, then this site's styles -->
     <link
-      rel="preload"
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Orbitron:wght@400;700&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Orbitron:wght@400;700&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/site.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -60,7 +53,7 @@
     </header>
 
     <main>
-      <section id="education" class="education reveal">
+      <section id="education" class="section education reveal">
         <h2>Education</h2>
         <div class="education-entry">
           <h3>Master of Science: Electrical Engineering</h3>
@@ -76,12 +69,12 @@
         </div>
       </section>
 
-      <section id="skills" class="skills reveal">
+      <section id="skills" class="section skills reveal">
         <h2>Technical Skills</h2>
-        <div class="skills-grid">
+        <div class="container skills-grid">
           <div class="skill-category">
             <h3>GenAI / LLM</h3>
-            <ul>
+            <ul class="bullet-list skill-list">
               <li>OpenAI API</li>
               <li>Gemini API</li>
               <li>LangChain</li>
@@ -95,7 +88,7 @@
           </div>
           <div class="skill-category">
             <h3>Languages</h3>
-            <ul>
+            <ul class="bullet-list skill-list">
               <li>Python</li>
               <li>C++</li>
               <li>C</li>
@@ -108,7 +101,7 @@
           </div>
           <div class="skill-category">
             <h3>Tools &amp; Design</h3>
-            <ul>
+            <ul class="bullet-list skill-list">
               <li>Visual Studio Code</li>
               <li>Unity</li>
               <li>Fusion 360</li>
@@ -125,7 +118,7 @@
           </div>
           <div class="skill-category">
             <h3>ML / AI</h3>
-            <ul>
+            <ul class="bullet-list skill-list">
               <li>PyTorch</li>
               <li>Hugging Face Transformers</li>
               <li>Hugging Face Datasets</li>
@@ -133,7 +126,7 @@
           </div>
           <div class="skill-category">
             <h3>Backend / Systems</h3>
-            <ul>
+            <ul class="bullet-list skill-list">
               <li>Linux</li>
               <li>Docker</li>
               <li>Google Cloud Console (GCP)</li>
@@ -142,9 +135,9 @@
         </div>
       </section>
 
-      <section id="experience" class="experience reveal">
+      <section id="experience" class="section experience reveal">
         <h2>Experience</h2>
-        <div class="timeline-board">
+        <div class="board timeline-board">
           <div class="timeline-scale" aria-hidden="true">
             <span data-date="2022-09-01">Sep 2022</span>
             <span data-date="2024-01-01">Jan 2024</span>
@@ -163,7 +156,7 @@
             <div class="timeline-track" aria-hidden="true">
               <span class="timeline-bar timeline-bar-industry" data-start="2026-06-01" data-end="present"></span>
             </div>
-            <ul>
+            <ul class="bullet-list">
               <li>Develop production C++ within a large-scale radar codebase, navigating a complex multi-module repository.</li>
               <li>Build and integrate software for phased array radar systems.</li>
               <li>Work in a Linux development environment.</li>
@@ -182,7 +175,7 @@
             <div class="timeline-track" aria-hidden="true">
               <span class="timeline-bar timeline-bar-research" data-start="2025-09-01" data-end="present"></span>
             </div>
-            <ul>
+            <ul class="bullet-list">
               <li>Designed agentic, multi-step decision pipelines with tool calling and structured outputs to improve reliability across complex workflows.</li>
               <li>Built reusable MCP-style tool interfaces connecting LLMs to external services and internal utilities.</li>
               <li>Developed Linux and Docker workflows to support consistent builds and deployments across machines.</li>
@@ -201,7 +194,7 @@
             <div class="timeline-track" aria-hidden="true">
               <span class="timeline-bar timeline-bar-builder" data-start="2026-01-01" data-end="2026-05-31"></span>
             </div>
-            <ul>
+            <ul class="bullet-list">
               <li>Built custom LLM and TTS software tools using the OpenAI API and ElevenLabs API.</li>
               <li>Created standalone full-stack prototypes to quickly develop and demonstrate new ideas.</li>
               <li>Communicated effectively in a remote workspace to keep projects documented and execution on track.</li>
@@ -219,7 +212,7 @@
             <div class="timeline-track" aria-hidden="true">
               <span class="timeline-bar timeline-bar-research-alt" data-start="2024-05-01" data-end="2025-08-31"></span>
             </div>
-            <ul>
+            <ul class="bullet-list">
               <li>Built LLM features using RAG, improving factual grounding across evaluation prompts.</li>
               <li>Integrated LLM capabilities using OpenAI&apos;s API in combination with GCP, connecting to Gmail and Google Calendar and implementing Google OAuth for secure sign-in.</li>
               <li>Developed and shipped backend services supporting AI workflows handling hundreds of requests per day.</li>
@@ -238,7 +231,7 @@
             <div class="timeline-track" aria-hidden="true">
               <span class="timeline-bar timeline-bar-industry" data-start="2024-05-01" data-end="2025-01-31"></span>
             </div>
-            <ul>
+            <ul class="bullet-list">
               <li>Developed Python and C software on embedded Linux platforms, improving system reliability through repeatable test routines.</li>
               <li>Diagnosed and resolved electrical and software issues using debugging, instrumentation, and logging.</li>
               <li>Produced clear technical documentation to improve maintainability and team handoff.</li>
@@ -256,7 +249,7 @@
             <div class="timeline-track" aria-hidden="true">
               <span class="timeline-bar timeline-bar-industry-alt" data-start="2023-06-01" data-end="2023-12-31"></span>
             </div>
-            <ul>
+            <ul class="bullet-list">
               <li>Resolved Linux system issues using low-level command-line debugging and root-cause analysis.</li>
               <li>Developed Bash, C, and C++ code for device-level integrations and internal tooling.</li>
               <li>Implemented OCR pipelines and validation checks to improve system accuracy and robustness.</li>
@@ -274,7 +267,7 @@
             <div class="timeline-track" aria-hidden="true">
               <span class="timeline-bar timeline-bar-support" data-start="2022-09-01" data-end="2024-05-31"></span>
             </div>
-            <ul>
+            <ul class="bullet-list">
               <li>Provided technical support and customer service to assist and guide users of URI technologies and tools.</li>
               <li>Troubleshot and resolved a broad range of computer issues in macOS and Windows environments.</li>
               <li>Utilized a standard IT ticketing system to document issues, communicate updates, and solve problems.</li>
@@ -283,36 +276,36 @@
         </div>
       </section>
 
-      <section id="projects" class="projects reveal">
+      <section id="projects" class="section projects reveal">
         <h2>Projects</h2>
         <div class="project-item">
           <h3>AI Meeting Assistant</h3>
-          <ul>
+          <ul class="bullet-list">
             <li>Shipped a production full-stack app and deployment workflow on Railway with a PostgreSQL-backed data model for durable meeting artifacts.</li>
             <li>Designed an LLM workflow with schema-first JSON outputs and validation to standardize summaries and action items for downstream integrations.</li>
             <li>Built reliability into the pipeline (retries, idempotent writes, explicit failure states) to prevent partial processing and inconsistent data.</li>
             <li>Created reusable prompts and templates to make the workflow repeatable and simple to enhance.</li>
           </ul>
-          <a href="https://www.meetingmuncher.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+          <a href="https://www.meetingmuncher.com/" target="_blank" rel="noopener noreferrer" class="btn btn-cta project-link">
             Visit Meeting Muncher
           </a>
         </div>
         <div class="project-item">
           <h3>Senior Capstone: Robotic Assembly &amp; Inspection</h3>
-          <ul>
+          <ul class="bullet-list">
             <li>Built a modular automation workcell for through-hole PCBA assembly and inspection.</li>
             <li>Designed end effectors, fixtures, and feeder hardware in CAD, iterated via rapid prototyping.</li>
             <li>Integrated OpenMV vision for pose/orientation detection and UART/serial signaling to control code.</li>
             <li>Wrote documentation and handoff notes (design decisions, layout, troubleshooting).</li>
             <li>Presented the final system to a large audience, covering results and design tradeoffs.</li>
           </ul>
-          <a href="CPR - Hayward Industries.pdf" target="_blank" rel="noopener noreferrer" class="project-link">
+          <a href="CPR - Hayward Industries.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-cta project-link">
             View Project Report
           </a>
         </div>
         <div class="project-item">
           <h3>LLM Robotics</h3>
-          <ul>
+          <ul class="bullet-list">
             <li>Built and simulated a mobile robot using ROS, integrating odometry and RGB-D camera data streams.</li>
             <li>Worked with SLAM-generated localization and mapping outputs to support downstream state awareness.</li>
             <li>Designed ROS nodes to preprocess sensor data and publish structured state representations for consumption by higher-level software.</li>
@@ -320,21 +313,21 @@
         </div>
         <div class="project-item">
           <h3>Arduino Mister &amp; Water Level Control System</h3>
-          <ul>
+          <ul class="bullet-list">
             <li>Developed an Arduino-based embedded system for environmental monitoring and remote misting control.</li>
             <li>Integrated DHT11 temperature/humidity sensing, analog water level measurement, Bluetooth communication, and OLED visualization.</li>
             <li>Built a mobile interface for real-time monitoring and misting control using Bluetooth.</li>
             <li>Designed and assembled a custom enclosure in CAD using 3D-printed parts for a fully working prototype.</li>
           </ul>
-          <a href="https://github.com/jackdemarinis/ProjectPickle" target="_blank" rel="noopener noreferrer" class="project-link">
+          <a href="https://github.com/jackdemarinis/ProjectPickle" target="_blank" rel="noopener noreferrer" class="btn btn-cta project-link">
             View GitHub Repo
           </a>
         </div>
       </section>
 
-      <section id="honors" class="honors reveal">
+      <section id="honors" class="section honors reveal">
         <h2>Activities &amp; Honors</h2>
-        <ul>
+        <ul class="bullet-list honors-list">
           <li>Dean's List (every semester, undergraduate and graduate)</li>
           <li>Raymond M. Wright FastTrack Scholarship (2025-2026, graduate school)</li>
           <li>URI Club Wrestling Team</li>
@@ -342,7 +335,7 @@
         </ul>
       </section>
 
-      <section id="contact" class="contact reveal">
+      <section id="contact" class="section contact reveal">
         <h2>Contact</h2>
         <p class="contact-intro">
           Open to new opportunities and collaboration. Reach out anytime.
@@ -390,62 +383,10 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <p>(c) 2026 Jack P. DeMarinis. All rights reserved.</p>
     </footer>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const text = 'Computer engineer building generative AI systems, full-stack prototypes, and robotics software.';
-        const target = document.getElementById('typewriter');
-        let index = 0;
-
-        function typeWriter() {
-          if (index < text.length) {
-            target.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 75);
-          } else {
-            target.classList.add('typing-done');
-          }
-        }
-
-        setTimeout(typeWriter, 1000);
-      });
-
-      function reveal() {
-        const reveals = document.querySelectorAll('.reveal');
-        for (const element of reveals) {
-          const windowHeight = window.innerHeight;
-          const elementTop = element.getBoundingClientRect().top;
-          const revealPoint = 150;
-          if (elementTop < windowHeight - revealPoint) {
-            element.classList.add('reveal-visible');
-          }
-        }
-      }
-      window.addEventListener('scroll', reveal);
-      reveal();
-
-      (function renderTimeline() {
-        const anchor = new Date(2022, 8, 1).getTime();
-        const now = Date.now();
-        const total = now - anchor;
-        const parse = (v) => v === 'present' ? now : new Date(v + 'T00:00:00').getTime();
-        const pct = (t) => ((t - anchor) / total) * 100;
-
-        document.querySelectorAll('.timeline-bar[data-start]').forEach((bar) => {
-          const start = parse(bar.dataset.start);
-          const end = parse(bar.dataset.end || 'present');
-          bar.style.setProperty('--start', pct(start).toFixed(2) + '%');
-          bar.style.setProperty('--span', (pct(end) - pct(start)).toFixed(2) + '%');
-        });
-
-        document.querySelectorAll('.timeline-scale span[data-date]').forEach((span) => {
-          const t = parse(span.dataset.date);
-          span.style.setProperty('--marker', pct(t).toFixed(2) + '%');
-        });
-      })();
-    </script>
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>
