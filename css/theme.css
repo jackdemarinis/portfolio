@@ -1,24 +1,15 @@
 /* ------------------------------------------------------------------
- * VENDORED FILE — DO NOT EDIT HERE.
- * Source of truth: webmaster/shared/theme.css
- * Regenerate with: python3 scripts/sync_theme.py (from the webmaster repo)
+ * theme.css: this site's own design tokens.
+ *
+ * Owned by this site alone; nothing syncs it and no other repo reads it.
+ * It started as a copy of the portfolio look (deep-space navy, ember
+ * orange, Orbitron over Montserrat). Change it freely for this site.
+ *
+ * Rule for this site's stylesheets: use var(--token) for colours,
+ * fonts, radii and shadows; add a token here rather than hardcoding a
+ * one-off value.
  * ------------------------------------------------------------------ */
 
-/*
- * theme.css — the shared design system for all of Jack's sites.
- *
- * SOURCE OF TRUTH: this file lives in `webmaster/shared/theme.css`.
- * Every site vendors a copy (sites deploy independently, so they cannot
- * symlink). To change the look everywhere: edit THIS file, then re-run
- * `python3 scripts/sync_theme.py` from the webmaster repo root.
- *
- * Derived from the portfolio site (jackdemarinis.com): deep-space navy,
- * ember-orange accent, Orbitron display type over Montserrat body type.
- *
- * Rule for site stylesheets: never hardcode a hex colour, font, radius or
- * shadow. Reference a token from this file. If a token is missing, add it
- * here rather than inventing a one-off value locally.
- */
 
 /* ---------------------------------------------------------------- fonts */
 /* Load in <head> before this file:

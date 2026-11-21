@@ -1,10 +1,9 @@
 # Portfolio — jackdemarinis.com
 
 Jack P. DeMarinis's personal site: a single-page portfolio covering education,
-skills, experience, projects and contact details. It is also the **design
-reference** for every other site in the `webmaster` family — the deep-space
-navy, ember-orange accent and Orbitron-over-Montserrat type of this page are
-what `webmaster/shared/theme.css` was extracted from.
+skills, experience, projects and contact details. Its deep-space navy,
+ember-orange accent and Orbitron-over-Montserrat look is the usual starting
+point other sites copy (copy, not share: each site owns its own theme).
 
 ## Stack
 
@@ -15,7 +14,7 @@ Fonts come from Google Fonts; everything else is served from this repo.
 index.html                    # the whole page
 CNAME                         # jackdemarinis.com
 css/
-  theme.css                   # vendored shared design system — DO NOT EDIT (see below)
+  theme.css                   # this site's design tokens
   site.css                    # this site's own styles
 js/
   app.js                      # ES module entry point: typewriter, reveal, timeline
@@ -52,23 +51,11 @@ Deployed by the [`webmaster`](../..) repo, which serves this repo's root over
 HTTP at `jackdemarinis.com`. It takes the latest `main`, so pushing to `main`
 here is the deploy. There is no build step and no artifact.
 
-## `css/theme.css` is vendored — do not edit it here
+## Styling
 
-`css/theme.css` is a **generated copy**. Its source of truth is
-`webmaster/shared/theme.css`, and every site in the family vendors the same
-file (sites deploy independently, so they cannot share one by reference).
-
-To change a colour, font, radius, shadow, spacing step or shared component:
-
-```bash
-# from the webmaster repo root
-$EDITOR shared/theme.css
-python3 scripts/sync_theme.py          # push the theme to every site
-python3 scripts/sync_theme.py --check  # fail if any copy has drifted
-```
-
-Edits made directly to `css/theme.css` will be silently overwritten on the next
-sync. `css/site.css` is the file to edit for anything specific to this page,
+`css/theme.css` holds this site's design tokens (colours, type, spacing, radii,
+shadows, shared components). Nothing syncs it; edit it freely. `css/site.css` is
+for anything specific to this page,
 and it references `var(--token)` from the theme rather than hardcoding colours,
 fonts, radii or shadows. The handful of values with no matching token are
 marked `no token` in a comment where they appear.
